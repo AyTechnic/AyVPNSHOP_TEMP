@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>خرید اشتراک Ay VPN</title>
+	<link rel="icon" type="image/png" href="https://aytechnic.s3.ir-thr-at1.arvanstorage.ir/LOGO%2FAy%20Technic05.webp">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* FONT & BASE STYLES */
+        @font-face {
+            font-family: 'Vazir';
+            src: url('https://ayvps.s3.ir-thr-at1.arvanstorage.ir/AySRC/VazirFont/Vazir-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Vazir';
+            src: url('https://ayvps.s3.ir-thr-at1.arvanstorage.ir/AySRC/VazirFont/Vazir-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Vazir';
+            src: url('https://ayvps.s3.ir-thr-at1.arvanstorage.ir/AySRC/VazirFont/Vazir-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-display: swap;
+        }
+
+        :root {
+            --font-family: 'Vazir', sans-serif;
+            --transition-speed: 0.3s;
+            
+            /* Light Theme */
+            --bg-light: #f8f9fa;
+            --card-bg-light: #ffffff;
+            --text-primary-light: #212529;
+            --text-secondary-light: #6c757d;
+            --border-light: #dee2e6;
+            --primary-color-light: #0d6efd;
+            --primary-hover-light: #0b5ed7;
+            --danger-color: #dc3545;
+            --title-color-light: #000;
+
+            /* Dark Theme */
+            --bg-dark: #0a192f;
+            --card-bg-dark: #1e293b;
+            --text-primary-dark: #e2e8f0;
+            --text-secondary-dark: #94a3b8;
+            --border-dark: #334155;
+            --primary-color-dark: #38bdf8;
+            --primary-hover-dark: #0ea5e9;
+            --title-color-dark: #fff;
+        }
+
+        [data-theme="light"] {
+            --bg-color: var(--bg-light);
+            --card-bg: var(--card-bg-light);
+            --text-primary: var(--text-primary-light);
+            --text-secondary: var(--text-secondary-light);
+            --border-color: var(--border-light);
+            --primary-color: var(--primary-color-light);
+            --primary-hover: var(--primary-hover-light);
+            --title-color: var(--title-color-light);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: var(--bg-dark);
+            --card-bg: var(--card-bg-dark);
+            --text-primary: var(--text-primary-dark);
+            --text-secondary: var(--text-secondary-dark);
+            --border-color: var(--border-dark);
+            --primary-color: var(--primary-color-dark);
+            --primary-hover: var(--primary-hover-dark);
+            --title-color: var(--title-color-dark);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        /* STICKY FOOTER FIX & BASE */
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+            line-height: 1.7;
+            overflow-x: hidden;
+            /* display: flex; /* NEW: Sticky Footer */
+            flex-direction: column; /* NEW: Sticky Footer */
+            min-height: 100vh; /* NEW: Sticky Footer */
+        }
+        .tabs-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding-top: 20px; 
+            padding-left: 40px; 
+            padding-right: 40px; 
+            padding-bottom: 40px; 
+            margin-top: 210px; 
+            flex-grow: 1; /* NEW: Sticky Footer */
+        }
+        @media (max-width: 768px) {
+        .tabs-container { 
+            padding-left: 20px; 
+            padding-right: 20px; 
+        }
+        }
+
+        /* HEADER */
+        header { margin-bottom: 40px; position: relative; }
+        header h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 4px; }
+        header p { font-size: 1.1rem; color: var(--text-secondary); max-width: 500px; margin: 0 auto; }
+        .theme-switcher { position: absolute; top: 0; left: 10px; }
+        #theme-toggle {
+            cursor: pointer; background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 50%; width: 44px; height: 44px;
+            display: flex; justify-content: center; align-items: center;
+            transition: background-color var(--transition-speed), border-color var(--transition-speed);
+        }
+        #theme-toggle:hover { background-color: var(--primary-color); }
+		#theme-toggle svg {
+			width: 22px;
+			height: 22px;
+			color: var(--text-primary);
+			transition: color var(--transition-speed);
+		}
+		#theme-toggle svg:hover { color: var(--text-primary-dark); }
+		[data-theme="dark"] #theme-toggle svg:hover { color: var(--text-primary-light); }
+		[data-theme="light"] #sun-icon {
+			display: none;
+		}
+		[data-theme="dark"] #moon-icon {
+			display: none;
+		}
+		
+        /* TABS */
+        .tabs {
+            display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;
+            margin-bottom: 40px; background-color: var(--card-bg);
+            border-radius: 50px; padding: 8px; width: fit-content;
+            margin-left: auto; margin-right: auto; border: 1px solid var(--border-color);
+        }
+        .tab-btn {
+			font-family: inherit;
+            background: transparent; border: none; padding: 10px 25px;
+            border-radius: 30px; font-size: 1rem; cursor: pointer;
+            transition: all var(--transition-speed); font-weight: 500;
+            color: var(--text-secondary); display: flex; align-items: center; gap: 8px;
+        }
+        .tab-btn.active { background: var(--primary-color); color: white; box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2); }
+        [data-theme="dark"] .tab-btn.active { box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2); }
+
+        /* PLANS GRID & TAB CONTENT */
+        .tab-content { display: none; }
+        .tab-content.active {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px; animation: fadeIn 0.5s ease-in-out;
+        }
+        #renew.active, #track.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .plan-card {
+            background: var(--card-bg); border: 1px solid var(--border-color);
+            border-radius: 20px; padding: 30px; text-align: center;
+            transition: all var(--transition-speed); cursor: pointer;
+            position: relative; overflow: hidden; border-top-width: 6px;
+            border-top-color: var(--plan-color);
+        }
+        .plan-card:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); }
+        [data-theme="dark"] .plan-card:hover { box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); }
+        .plan-card.selected {
+            border-color: var(--plan-color); border-top-color: var(--plan-color);
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.15);
+        }
+        [data-theme="dark"] .plan-card.selected { box-shadow: 0 8px 25px rgba(56, 189, 248, 0.15); }
+        
+        /* Plan Colors (Used as variables for dynamic styling) */
+        [data-plan-color-id="1"] { --plan-color: #0d6efd; --plan-color-rgb: 13, 110, 253; }
+        [data-plan-color-id="2"] { --plan-color: #198754; --plan-color-rgb: 25, 135, 84; }
+        [data-plan-color-id="3"] { --plan-color: #6f42c1; --plan-color-rgb: 111, 66, 193; }
+        [data-plan-color-id="4"] { --plan-color: #ffc107; --plan-color-rgb: 255, 193, 7; }
+        [data-plan-color-id="5"] { --plan-color: #dc3545; --plan-color-rgb: 220, 53, 69; }
+        [data-plan-color-id="6"] { --plan-color: #fd7e14; --plan-color-rgb: 253, 126, 20; }
+        [data-plan-color-id="7"] { --plan-color: #00bcd4; --plan-color-rgb: 0, 188, 212; } 
+        [data-plan-color-id="8"] { --plan-color: #8bc34a; --plan-color-rgb: 139, 195, 74; } 
+        [data-plan-color-id="9"] { --plan-color: #ff5722; --plan-color-rgb: 255, 87, 34; }
+        [data-plan-color-id="10"] { --plan-color: #607d8b; --plan-color-rgb: 96, 125, 139; }
+        [data-plan-color-id="11"] { --plan-color: #9c27b0; --plan-color-rgb: 156, 39, 176; }
+        [data-plan-color-id="12"] { --plan-color: #f44336; --plan-color-rgb: 244, 67, 54; }
+
+
+        .plan-card input { display: none; }
+        .plan-icon { margin-bottom: 15px; }
+        .plan-icon svg { width: 48px; height: 48px; color: var(--plan-color); }
+        .plan-duration { font-size: 1.6rem; font-weight: 700; color: var(--text-primary); }
+        .plan-features { 
+            list-style: none; padding: 0; margin: 25px 0; font-size: 0.95rem; 
+            color: var(--text-secondary); 
+            text-align: center; /* NEW: Center-align features */
+        }
+        .plan-features li { 
+            margin-bottom: 10px; 
+            text-align: center; /* NEW: Ensure li text is centered */
+        }
+        .os-icons { display: flex; justify-content: center; gap: 15px; margin: 20px 0; }
+        .os-icons svg { width: 24px; height: 24px; color: var(--plan-color); opacity: 0.7; }
+        
+        .plan-price-section { 
+            margin-top: 20px; 
+            border-top: 1px solid var(--border-color); 
+            padding-top: 20px;
+        }
+
+        .plan-price { 
+            font-size: 2.2rem; 
+            font-weight: 700; 
+            color: var(--text-primary); 
+            margin-bottom: 8px;
+        }
+        .plan-price span { 
+            font-size: 1rem; 
+            font-weight: 400; 
+            color: var(--text-secondary); 
+        }
+
+        /* NEW: User Icon Selector Styles (for Buy Tabs) */
+        .user-icon-selector {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 20px 0 30px;
+            padding: 10px 0;
+            border-top: 1px dashed var(--border-color);
+            border-bottom: 1px dashed var(--border-color);
+        }
+        .user-icon {
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            color: var(--text-secondary);
+            transition: color 0.1s;
+        }
+        .user-icon.selected {
+            color: var(--plan-color);
+        }
+        .user-count-display {
+            margin-top: 10px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--plan-color);
+            margin-bottom: 20px;
+        }
+        /* Purchase Button */
+        .purchase-btn { 
+            background: var(--plan-color); /* Use plan color */
+            color: white; 
+            border: none; 
+            padding: 15px 40px; 
+            font-size: 1.2rem; 
+            font-weight: 500; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            transition: all var(--transition-speed); 
+            display: block; 
+            width: fit-content; 
+            margin: 50px auto 0; 
+            box-shadow: 0 5px 15px rgba(var(--plan-color-rgb, 0, 123, 255), 0.3); /* Use plan color shadow */
+			font-family: inherit;
+        }
+        .purchase-btn:hover { 
+            background: var(--plan-color); 
+            opacity: 0.9;
+            transform: translateY(-3px); 
+            box-shadow: 0 8px 20px rgba(var(--plan-color-rgb, 0, 123, 255), 0.4); 
+        }
+        .purchase-btn:disabled { background: #aaa; cursor: not-allowed; transform: none; box-shadow: none; }
+
+
+        /* RENEWAL SECTION STYLES */
+        .renewal-configurator { 
+            background: var(--card-bg); 
+            border: 1px solid var(--border-color); 
+            border-radius: 20px; 
+            padding: 30px; 
+            text-align: center; 
+            animation: fadeIn 0.5s ease-in-out; 
+            border-top: 4px solid var(--plan-color, var(--primary-color)); /* Sync with selected plan color */
+            transition: border-top-color var(--transition-speed); 
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .renewal-configurator h3 { margin-bottom: 25px; font-size: 1.5rem; }
+
+        .renewal-configurator .plan-type-selector {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .renewal-configurator .plan-type-selector button {
+            background: var(--bg-color);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            margin-top: 20px;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            font-weight: 500;
+			font-family: inherit;
+        }
+        .renewal-configurator .plan-type-selector button.active {
+            background: var(--plan-color, var(--primary-color)); /* Sync with selected plan color */
+            color: white;
+            border-color: var(--plan-color, var(--primary-color));
+            box-shadow: 0 4px 10px rgba(var(--plan-color-rgb, 0, 123, 255), 0.2);
+        }
+        
+        .renewal-configurator .slider-group {
+            margin-bottom: 40px;
+            text-align: right;
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .renewal-configurator .slider-group p {
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+        
+        /* Custom Range Slider Styles for Color Sync */
+        .custom-range-slider {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            -webkit-appearance: none;
+            cursor: pointer;
+            outline: none;
+            /* Track Color (for dual slider) */
+            background: linear-gradient(to left, var(--plan-color) var(--slider-percent), var(--text-secondary) var(--slider-percent));
+            transition: background var(--transition-speed);
+        }
+        .custom-range-slider::-webkit-slider-runnable-track {
+            background: var(--text-secondary);
+        }
+        .custom-range-slider.colored-track::-webkit-slider-runnable-track {
+            /* This is a fallback for browsers that don't support the background trick well */
+            background: linear-gradient(to left, var(--plan-color) var(--slider-percent), var(--text-secondary) var(--slider-percent));
+        }
+
+        .custom-range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: var(--plan-color); /* Sync with selected plan color */
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid var(--card-bg);
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            transition: background var(--transition-speed);
+        }
+        .custom-range-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: var(--plan-color); /* Sync with selected plan color */
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid var(--card-bg);
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            transition: background var(--transition-speed);
+        }
+
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .slider-label span {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--plan-color); /* Sync with selected plan color */
+        }
+        
+        .renewal-configurator .renew-details {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            text-align: right;
+            background: var(--bg-color);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            margin-top: 30px;
+        }
+        .renewal-configurator .renew-details p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-primary);
+            display: flex;
+            justify-content: space-between;
+        }
+        .renewal-configurator .renew-details span {
+            font-weight: 700;
+            color: var(--plan-color); /* Sync with selected plan color */
+        }
+        .renewal-configurator input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            font-size: 1rem;
+            text-align: right;
+            margin-top: 15px;
+        }
+        .renewal-configurator .renew-btn {
+            background: var(--plan-color); /* Sync with selected plan color */
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all var(--transition-speed);
+            margin-top: 30px;
+            width: 100%;
+            box-shadow: 0 5px 15px rgba(var(--plan-color-rgb, 0, 123, 255), 0.3);
+        }
+        .renewal-configurator .renew-btn:hover { 
+            background: var(--plan-color); 
+            opacity: 0.9;
+        }
+
+        /* TRACKING SECTION STYLES (Styled with dynamic border/shadow) */
+        #track { max-width: 600px; margin: 0 auto; }
+        #track h3 { margin-bottom: 20px; font-size: 1.5rem; text-align: center; }
+        #track form { 
+            display: flex; flex-direction: column; gap: 15px; 
+            background: var(--card-bg); padding: 30px; border-radius: 15px; 
+            /* NEW: Card Styling for Colored Top Border and Transition */
+            border: 1px solid var(--border-color);
+            border-top: 8px solid var(--primary-color); /* Colored top border using primary color */
+            transition: all var(--transition-speed); 
+        }
+        #track form:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); 
+            border-color: var(--primary-color);
+        }
+        [data-theme="dark"] #track form:hover { 
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); 
+        }
+        
+        #track input { padding: 12px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--bg-color); color: var(--text-primary); font-family: var(--font-family); font-size: 1rem; text-align: right; }
+        #track button { background: var(--primary-color); color: white; border: none; padding: 12px; font-size: 1.1rem; font-weight: 500; border-radius: 8px; cursor: pointer; transition: background var(--transition-speed); display: flex; align-items: center; justify-content: center; gap: 8px; font-family: inherit; }
+        #track button:hover { background: var(--primary-hover); }
+        #track button:disabled { background: #aaa; cursor: not-allowed; }
+        #tracking-results { 
+            margin-top: 25px; 
+            padding: 20px; 
+            background: var(--card-bg); 
+            border-radius: 15px; 
+            border: 2px solid var(--primary-color); /* NEW: Colored Border/Shadow */
+            box-shadow: 0 4px 20px rgba(13, 110, 253, 0.15); 
+            text-align: right;
+            animation: fadeIn 0.5s ease-in-out;
+            transition: all var(--transition-speed);
+        }
+        .result-item { 
+            border-bottom: 1px dashed var(--border-color); 
+            padding: 15px 0; 
+            margin-bottom: 15px; 
+        }
+        .result-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0;}
+        .result-item p { margin: 8px 0; font-size: 0.95rem; }
+        .result-item strong { color: var(--text-primary); font-weight: 500; }
+        .result-item span { color: var(--primary-color); font-weight: 700; }
+        .result-item code {
+            display: block;
+            background: var(--bg-color);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            word-break: break-all;
+            margin-top: 5px;
+            direction: ltr;
+            text-align: left;
+        }
+
+
+        /* MODAL STYLES (Fixed for Mobile) */
+        .modal {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px);
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; visibility: hidden; transition: all var(--transition-speed);
+            z-index: 1000;
+            padding: 10px;
+        }
+        .modal.show { opacity: 1; visibility: visible; }
+        .modal-content {
+            background: var(--card-bg); padding: 30px; border-radius: 20px;
+            width: 95%; max-width: 500px; text-align: right; position: relative;
+            transform: translateY(-50px); transition: transform var(--transition-speed);
+            max-height: 90vh; /* NEW: Mobile Height Fix */
+            overflow-y: auto; /* NEW: Mobile Scrolling Fix */
+        }
+        .modal.show .modal-content { transform: translateY(0); }
+        .close-btn { 
+            position: absolute; top: 15px; right: 15px; 
+            background: none; border: none; font-size: 1.5rem; 
+            cursor: pointer; color: var(--text-secondary);
+        }
+        .modal-content h2 { margin-bottom: 10px; font-size: 1.8rem; color: var(--primary-color); }
+        #modal-plan-info { margin-bottom: 25px; font-size: 1rem; color: var(--text-secondary); border-bottom: 1px dashed var(--border-color); padding-bottom: 15px; }
+
+        .modal-form label { display: block; margin-bottom: 8px; font-weight: 500; font-size: 0.95rem; }
+        .modal-form input:not([type="submit"]) {
+            width: 100%; padding: 12px; border: 1px solid var(--border-color);
+            border-radius: 8px; background: var(--bg-color); color: var(--text-primary);
+            font-family: var(--font-family); font-size: 1rem; margin-bottom: 15px;
+            text-align: right;
+        }
+        .modal-form button[type="submit"] {
+            background: var(--primary-color); color: white; border: none;
+            padding: 15px; font-size: 1.2rem; font-weight: 500; border-radius: 8px;
+            cursor: pointer; width: 100%; transition: background var(--transition-speed);
+            margin-top: 20px; display: flex; align-items: center; justify-content: center; gap: 10px;
+			font-family: inherit;
+        }
+        .modal-form button[type="submit"]:hover { background: var(--primary-hover); }
+        .modal-form button[type="submit"]:disabled { background: #aaa; cursor: not-allowed; }
+
+        .price-summary-box {
+            background: var(--bg-color); padding: 15px; border-radius: 10px;
+            border: 1px solid var(--border-color); margin-bottom: 20px;
+        }
+        .price-summary-box p {
+            display: flex; justify-content: space-between; margin: 8px 0;
+            font-size: 0.95rem;
+        }
+        .price-summary-box .final-amount {
+            font-size: 1.2rem; font-weight: 700; color: var(--primary-color);
+            border-top: 1px dashed var(--border-color); padding-top: 10px; margin-top: 10px;
+        }
+        
+        /* NEW: Description Textarea Style */
+        .modal-form textarea {
+            width: 100%;
+            min-height: 100px;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            resize: vertical;
+            text-align: right;
+        }
+
+        /* NEW: Coupon Toggle and Field Styles */
+        .toggle-coupon-btn {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-weight: 500;
+            text-align: right;
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 0;
+            transition: color var(--transition-speed);
+			font-family: inherit;
+        }
+        .toggle-coupon-btn:hover {
+            color: var(--primary-hover);
+        }
+        .coupon-field-container {
+            display: none; /* Hidden by default */
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+        .coupon-field-container.active {
+            display: flex;
+        }
+        .coupon-field-container input { margin: 0; flex-grow: 1; margin-bottom: 0; }
+        .coupon-field-container button { margin-bottom: auto; margin-top: 1; 
+            flex-shrink: 0; background: var(--primary-color); color: white; 
+            border: none; padding: 14px 15px; font-size: 0.9rem; 
+            border-radius: 8px; cursor: pointer; transition: background var(--transition-speed);
+			font-family: inherit;
+        }
+        .coupon-field-container button:hover { background: var(--primary-hover); }
+        .coupon-field-container button:disabled { background: #aaa; cursor: not-allowed; }
+        .coupon-message { 
+            font-size: 0.9rem; 
+            margin-bottom: 15px; 
+            padding: 8px; 
+            border-radius: 6px; 
+            text-align: center;
+        }
+        .coupon-success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .coupon-error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+
+
+        /* FOOTER */
+        footer { 
+            width: 100%;
+            margin-top: auto; /* NEW: Sticky Footer */
+            padding: 20px 40px; 
+            border-top: 1px solid var(--border-color); 
+            text-align: center;
+            background: var(--card-bg);
+        }
+        .social-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 15px; }
+        .social-links a { color: var(--text-secondary); transition: color var(--transition-speed); }
+        .social-links a:hover { color: var(--primary-color); }
+        .social-links svg { width: 24px; height: 24px; }
+        footer p { font-size: 0.9rem; color: var(--text-secondary); }
+
+        
+        footer a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--primary-color);
+            text-decoration: bold;
+        }
+
+    </style>
+
+    <style>
+        /* کانتینر اصلی */
+        #typing-container {
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 8px;
+            overflow: hidden; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 1px;
+       }
+
+        /* المان محفظه اسکرول - مهم‌ترین بخش برای اسکرول افقی */
+        #typed-text-wrapper {
+            min-height: 40px;
+            overflow-x: auto; 
+            white-space: nowrap; 
+            padding-top: 5px; 
+            padding-left: 5px;
+            padding-bottom: 2px;
+            text-align: right; 
+            border: 1px solid;
+            border-radius: 18px;
+            border-color: var(--border-color);
+            color: var(--text-secondary);
+            
+            /* کدهای مخفی کردن نوار اسکرول */
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* مخفی کردن در مرورگرهای Webkit (Chrome, Safari) */
+        #typed-text-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* المانی که متن در آن قرار می گیرد */
+        #typed-content {
+            white-space: nowrap;
+            display: inline-block; 
+            font-size: 1.2rem;
+            padding-right: 15px; 
+            padding-left: 1px; 
+        }
+
+        /* --- استایل دهی دکمه نمونه اشتراک --- */
+        #typed-content button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 13px 13px;
+            font-size: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 5px;
+        }
+
+        #typed-content button:hover {
+            background-color: var(--primary-hover);
+        }
+        /* --- پایان استایل دهی دکمه --- */
+
+
+        /* المان مکان نما */
+        #cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1.2em;
+            background-color: var(--text-primary);
+            margin-left: 15px;
+            vertical-align: middle;
+            animation: blink-cursor .75s step-end infinite;
+        }
+        
+        /* انیمیشن چشمک زن برای مکان نما */
+        @keyframes blink-cursor {
+            from, to { opacity: 0 }
+            50% { opacity: 1; }
+        }
+
+        /* مخفی کردن مکان نما */
+        .hidden-cursor {
+            opacity: 0 !important;
+        }
+
+        /* CSS اختصاصی برای نمایشگرهای کوچک */
+        @media (max-width: 768px) {
+            #typed-text-wrapper {
+                overflow-x: scroll;
+                -webkit-overflow-scrolling: touch; 
+            }
+            #typed-content {
+                font-size: 1rem;
+            }
+            #typed-content button {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    <style>
+        #page-header {
+            position: fixed; 
+            top: 0; 
+            left: 0;
+            right: 0;
+            z-index: 100;
+            
+            display: flex; 
+            flex-direction: column; /* عمودی برای حالت بزرگ */
+            justify-content: center;
+            align-items: center; 
+            
+            /* ارتفاع بزرگ را با Padding تعریف می‌کنیم */
+            padding: 20px;
+            
+            background-color: var(--card-bg);
+            opacity: 90%; 
+            border-radius: 15px; 
+            border-bottom: 3px solid var(--primary-color);
+            box-shadow: 0 4px 20px rgba(13, 110, 253, 0.45); 
+            
+            /* **انتقال نرم روی padding** (به جای height) */
+            transition: padding 0.3s ease-in-out, background-color 0.3s, box-shadow 0.3s; 
+            
+            width: 100%; 
+            overflow: hidden;
+        }
+        
+        /* کانتینر برای محتوای اصلی */
+        .header-content-wrapper {
+            display: flex;
+            flex-direction: column; /* برای حالت عادی: محتوا زیر هم */
+            align-items: center;
+            text-align: center;
+            width: 100%; 
+            /* انتقال نرم برای تغییر Flex */
+            transition: all 0.3s ease-in-out; 
+        }
+
+        /* --- استایل‌های حالت عادی --- */
+        .header-title {
+            transition: font-size 0.3s ease-in-out, margin 0.3s;
+            text-shadow: 0 2px 10px rgba(99, 102, 241, 0.2);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--title-color), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .header-subtitle {
+            opacity: 1; 
+            visibility: visible;
+            height: auto;
+            transition: opacity 0.3s ease-in-out, height 0.3s, margin 0.3s;
+        }
+
+        /* --- استایل‌های حالت 'collapsed' --- */
+        
+        #page-header.collapsed {
+            width: 100%; /* استفاده از تمام عرض هدر */
+            padding: 0.01rem;
+        }
+        
+        #page-header.collapsed .header-title {
+            font-size: 2rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem;
+        }
+
+        #page-header.collapsed .header-subtitle {
+            opacity: 0;
+            visibility: hidden;
+            height: 0; 
+            margin: 0;
+        }
+        
+        #page-header.collapsed .header-icon-placeholder {
+            opacity: 0;
+            visibility: hidden;
+            height: 0; 
+            margin: 0;
+       }
+
+        /* مدیریت سوئیچر تم برای قرارگیری در گوشه */
+        .theme-switcher {
+            position: absolute;
+            z-index: 104;
+            transition: top 0.4s ease-out;
+            margin-top: 0.3rem;
+            margin-left: 1rem;
+        }
+    </style>
+    <style>
+        /* --- Flip Card Styles --- */
+        .flip-card {
+            background-color: transparent;
+            width: 100%;
+            height: 350px;
+            perspective: 1000px;
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front, .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .flip-card-front {
+            background-color: var(--card-bg);
+            border-top: 6px solid var(--plan-color);
+        }
+
+        .flip-card-back {
+            background-color: var(--card-bg);
+            transform: rotateY(180deg);
+            border-top: 6px solid var(--primary-color);
+        }
+
+        .flip-card h3 { font-size: 1.5rem; margin-bottom: 10px; color: var(--text-primary); }
+        .flip-card p { color: var(--text-secondary); margin-bottom: 20px; }
+        .flip-card .test-icon { width: 50px; height: 50px; color: var(--plan-color); margin-bottom: 15px; }
+
+        .flip-card button.flip-btn {
+            background-color: var(--plan-color);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        .flip-card button.flip-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        .flip-card input[type="tel"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-color);
+            color: var(--text-primary);
+            text-align: center;
+            direction: ltr;
+        }
+
+        .flip-card .result-container {
+            display: none;
+            text-align: center;
+            width: 100%;
+        }
+        .flip-card .result-container.active { display: block; }
+
+        .flip-card code {
+            display: block;
+            background: var(--bg-color);
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            font-family: monospace;
+            word-break: break-all;
+            font-size: 0.9rem;
+            max-height: 100px;
+            overflow-y: auto;
+        }
+        
+        .flip-card .copy-btn {
+            background: var(--primary-color);
+            margin-top: 5px;
+            font-size: 0.9rem;
+            padding: 8px 15px;
+        }
+        
+        .flip-card .countdown { font-weight: bold; color: var(--danger-color); margin-top: 10px; font-size: 0.9rem;}
+        
+        .back-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+    </style>
+
+</head>
+<body data-theme="light">
+
+    <div class="container">
+    <header id="page-header">
+        <div class="theme-switcher">
+            <button id="theme-toggle">
+                <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun">
+                    <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="M4.93 4.93l1.41 1.41"/><path d="M17.66 17.66l1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="M4.93 19.07l1.41-1.41"/><path d="M17.66 6.34l1.41-1.41"/>
+                </svg>
+                <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon">
+                    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="header-content-wrapper">
+            <div class="header-icon-placeholder">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+            </div>
+            
+            <h1 class="header-title">Ay VPN</h1>
+            <p class="header-subtitle">سرویس‌های پرسرعت V2Ray برای اینترنت ملی و آزاد</p>
+        </div>
+        
+    </header>
+
+        <div class="tabs-container">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="buy-unlimited">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> اشتراک نامحدود
+                </button>
+                <button class="tab-btn" data-tab="buy-national">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flag"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg> اینترنت ملی
+                </button>
+                <button class="tab-btn" data-tab="free-test">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift"><polyline points="20 12 20 22 4 22 4 12"/><rect width="20" height="5" x="2" y="7"/><line x1="12" x2="12" y1="22" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg> تست رایگان
+                </button>
+                <button class="tab-btn" data-tab="renew">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-cw"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.76 2.82"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.76-2.82"/><path d="M18.5 5.5v3h3"/><path d="M5.5 18.5v-3H2.5"/></svg> تمدید اشتراک
+                </button>
+                <button class="tab-btn" data-tab="track">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-receipt"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1z"/><path d="M8 7h8"/><path d="M8 11h8"/><path d="M8 15h8"/></svg> پیگیری
+                </button>
+                <button class="tab-btn" data-tab="sub-page">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user user-icon${isSelected}" data-users="${i}"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>ورود به پنل کاربری
+                </button>
+            </div>
+
+    <div id="typing-container">
+        <div id="typed-text-wrapper">
+            <span id="typed-content"></span>
+            <span id="cursor"></span>
+        </div>
+    </div>
+
+            <div id="buy-unlimited" class="tab-content active">
+                </div>
+
+            <div id="buy-national" class="tab-content">
+                </div>
+            
+            <div id="free-test" class="tab-content">
+                <div class="flip-card" style="--plan-color: #0d6efd;">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                            <h3>اشتراک نامحدود تست</h3>
+                            <p>تست ۱ روزه - بدون محدودیت حجم</p>
+                            <button class="flip-btn">دریافت رایگان</button>
+                        </div>
+                        <div class="flip-card-back">
+                            <button class="back-btn" onclick="flipBack(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                            </button>
+                            <form class="test-form" onsubmit="handleTestSubmit(event, 'unlimited')">
+                                <label style="margin-bottom: 10px; display: block;">شماره موبایل (اجباری)</label>
+                                <input type="tel" name="phone" placeholder="09123456789" required>
+                                <button type="submit" class="flip-btn" style="width: 100%;">دریافت لینک</button>
+                            </form>
+                            <div class="result-container">
+                                <svg style="color: #28a745; width: 40px; height: 40px; margin-bottom: 10px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <h4>لینک شما آماده است!</h4>
+                                <code class="subscription-link"></code>
+                                <button class="flip-btn copy-btn" onclick="copyLink(this)">کپی لینک</button>
+                                <div class="countdown"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card" style="--plan-color: #00bcd4;">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <svg class="test-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" x2="4" y1="22" y2="15"/></svg>
+                            <h3>اشتراک ملی تست</h3>
+                            <p>تست ۱ روزه - ویژه اینترنت ملی</p>
+                            <button class="flip-btn">دریافت رایگان</button>
+                        </div>
+                        <div class="flip-card-back">
+                            <button class="back-btn" onclick="flipBack(this)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                            </button>
+                            <form class="test-form" onsubmit="handleTestSubmit(event, 'national')">
+                                <label style="margin-bottom: 10px; display: block;">شماره موبایل (اجباری)</label>
+                                <input type="tel" name="phone" placeholder="09123456789" required>
+                                <button type="submit" class="flip-btn" style="width: 100%;">دریافت لینک</button>
+                            </form>
+                            <div class="result-container">
+                                <svg style="color: #28a745; width: 40px; height: 40px; margin-bottom: 10px;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                <h4>لینک شما آماده است!</h4>
+                                <code class="subscription-link"></code>
+                                <button class="flip-btn copy-btn" onclick="copyLink(this)">کپی لینک</button>
+                                <div class="countdown"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="renew" class="tab-content">
+                <div id="renewal-configurator" class="renewal-configurator" data-plan-color-id="1">
+                    <h3>تمدید اشتراک</h3>
+                    
+                    <div class="renewal-form-inputs">
+                        <label for="renewalIdentifier">شناسه‌ی تمدید/لینک اشتراک <span style="color: var(--danger-color);">*الزامی</span></label>
+                        <input type="text" id="renewalIdentifier" name="renewalIdentifier" placeholder="لینک اشتراک، ایمیل یا نام کاربری خود را وارد کنید" required>
+                    </div>
+
+                    <div class="renewal-configurator-content">
+                        <div class="plan-type-selector">
+                            <button class="plan-type-btn active" data-type="unlimited">اشتراک نامحدود</button>
+                            <button class="plan-type-btn" data-type="national">برای اینترنت ملی</button>
+                        </div>
+
+                        <div class="slider-group duration-slider-group">
+                            <p>مدت زمان تمدید: <span id="renewDurationLabel">۳ ماهه</span></p>
+                            <input type="range" class="custom-range-slider" id="renewDurationSlider" min="1" max="6" value="3" step="1" style="--slider-percent: 50%;">
+                            <div class="slider-label" id="renewDurationMarks">
+                                </div>
+                        </div>
+
+                        <div class="slider-group">
+                            <p>تعداد کاربران: <span id="renewUserCountLabel">۲ نفر</span></p>
+                            <input type="range" class="custom-range-slider" id="renewUserCountSlider" min="1" max="8" value="2" step="1" style="--slider-percent: 14.28%;">
+                            <div class="slider-label">
+                                <span>۱</span>
+                                <span>۲</span>
+                                <span>۳</span>
+                                <span>۴</span>
+                                <span>۵</span>
+                                <span>۶</span>
+                                <span>۷</span>
+                                <span>۸</span>
+                            </div>
+                        </div>
+
+                        <div class="renew-details">
+                            <p>قیمت پایه: <span id="renewBasePriceDisplay">۳۴۰,۰۰۰ تومان</span></p>
+                            <p>تعداد کاربر: <span id="renewUsersDisplay">۲ نفر</span></p>
+                            <p>قیمت نهایی: <span id="renewFinalPriceDisplay">۵۱۰,۰۰۰ تومان</span></p>
+                        </div>
+                    </div>
+                    
+                    <button class="purchase-btn renew-btn" id="openRenewModalBtn" data-plan-color="#6f42c1" data-total-price="510000" data-requested-plan="R3M" data-users="2">تمدید و پرداخت</button>
+                </div>
+            </div>
+
+            <div id="track" class="tab-content">
+                <form id="tracking-form">
+                    <h3>پیگیری سفارشات</h3>
+                    <input type="text" id="tracking-input" placeholder="کد رهگیری، لینک اشتراک، ایمیل یا شماره تماس را وارد کنید" required>
+                    <button type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                        جستجو
+                    </button>
+                </form>
+                <div id="tracking-results" style="display: none;">
+                    </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <button class="close-btn">&times;</button>
+            <h2>تکمیل اطلاعات خرید</h2>
+            <div id="modal-plan-info"></div>
+
+            <form id="payment-form" class="modal-form">
+                
+                <label for="modal-name">نام و نام خانوادگی (اختیاری)</label>
+                <input type="text" id="modal-name" name="name" placeholder="مثال: آیلین">
+
+                <label for="modal-email">آدرس ایمیل (اختیاری)</label>
+                <input type="email" id="modal-email" name="email" placeholder="مثال: user@gmail.com">
+
+                <label for="modal-phone">شماره تماس (اختیاری)</label>
+                <input type="tel" id="modal-phone" name="phone" placeholder="مثال: 09123456789">
+
+                <label for="modal-telegram-id">آیدی تلگرام (اختیاری)</label>
+                <input type="text" id="modal-telegram-id" name="telegramUsername" placeholder="مثال: @shammay">
+                
+                <label for="modal-description">توضیحات (اختیاری)</label>
+                <textarea id="modal-description" name="description" placeholder="در صورت نیاز به توضیحات خاص، اینجا وارد کنید"></textarea>
+
+                <button type="button" class="toggle-coupon-btn" id="toggleCouponBtn">
+                    <span id="couponToggleText">کد تخفیف دارم</span>
+                </button>
+                <div class="coupon-field-container" id="couponFieldContainer">
+                    <input type="text" id="modal-coupon-code" name="coupenCode" placeholder="کد تخفیف خود را وارد کنید">
+                    <button type="button" id="applyCouponBtn" class="check-coupon">اعمال</button>
+                </div>
+                <div id="couponMessage" class="coupon-message" style="display: none;"></div>
+
+
+                <div class="price-summary-box">
+                    <p>مبلغ اولیه: <span id="summary-original-amount"></span></p>
+                    <p id="summary-discount-row" style="display: none;">تخفیف: <span id="summary-discount-amount"></span></p>
+                    <p class="final-amount">مبلغ نهایی: <span id="summary-final-amount"></span></p>
+                </div>
+
+                <button type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card"><rect width="22" height="16" x="1" y="4" rx="2" /><path d="M1 10h22" /></svg>
+                    پرداخت و دریافت اشتراک
+                </button>
+                
+                <input type="hidden" id="modal-amount" name="amount">
+                <input type="hidden" id="modal-original-amount" name="originalAmount">
+                <input type="hidden" id="modal-requested-plan" name="requestedPlan">
+                <input type="hidden" id="modal-users" name="users">
+                <input type="hidden" id="modal-renewal-id" name="renewalIdentifier">
+            </form>
+        </div>
+    </div>
+
+
+    <footer>
+        <div class="social-links">
+            <a href="https://shammay.ir" target="_blank" title="دانلودها">
+                <svg data-lucide="Download"></svg>
+				</a>
+            <a href="https://t.me/Ay_VPN" target="_blank" title="تلگرام">
+                <svg data-lucide="send"></svg>
+            </a>
+            <a href="https://instagram.com/Ay_VPN" target="_blank" title="اینستاگرام">
+                <svg data-lucide="instagram"></svg>
+            </a>
+            <a href="mailto:AyVPN@shammay.ir" title="ایمیل">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+        </div>
+        <p>© تمامی حقوق مادی و معنوی توسط کمپانی <a href="https://shammay.ir" target="_blank">آی تکنیک</a> محفوظ می باشد.</p>
+   </footer>
+
+
+    <script>
+        // --- Dynamic Data for Plans ---
+        const PlansData = [
+            // Unlimited Plans (ID 1-6)
+            { id: 1, type: 'unlimited', duration: '۱ ماهه', requestedPlan: '1M', baseAmount: 120000, color: '#0d6efd', colorId: 1, icon: 'zap', features: ['آی.پی ثابت', 'پرسرعت و پایدار', 'بدون محدودیت حجمی', '🇨🇦 🇳🇱 🇩🇪 🇫🇷 🇺🇸 🇦🇪 🇬🇧', '🇫🇮 🇯🇵 🇰🇷 🇨🇳 🇪🇸 🇮🇹 🇷🇺'] },
+            { id: 2, type: 'unlimited', duration: '۲ ماهه', requestedPlan: '2M', baseAmount: 220000, color: '#198754', colorId: 2, icon: 'rocket', features: ['آی.پی ثابت', 'پرسرعت و پایدار', 'بدون محدودیت حجمی', '🇨🇦 🇳🇱 🇩🇪 🇫🇷 🇺🇸 🇦🇪 🇬🇧', '🇫🇮 🇯🇵 🇰🇷 🇨🇳 🇪🇸 🇮🇹 🇷🇺'] },
+            { id: 3, type: 'unlimited', duration: '۳ ماهه', requestedPlan: '3M', baseAmount: 340000, color: '#6f42c1', colorId: 3, icon: 'star', features: ['آی.پی ثابت', 'پرسرعت و پایدار', 'بدون محدودیت حجمی', '🇨🇦 🇳🇱 🇩🇪 🇫🇷 🇺🇸 🇦🇪 🇬🇧', '🇫🇮 🇯🇵 🇰🇷 🇨🇳 🇪🇸 🇮🇹 🇷🇺'] },
+            { id: 4, type: 'unlimited', duration: '۶ ماهه', requestedPlan: '6M', baseAmount: 600000, color: '#ffc107', colorId: 4, icon: 'flame', features: ['آی.پی ثابت', 'پرسرعت و پایدار', 'بدون محدودیت حجمی', '🇨🇦 🇳🇱 🇩🇪 🇫🇷 🇺🇸 🇦🇪 🇬🇧', '🇫🇮 🇯🇵 🇰🇷 🇨🇳 🇪🇸 🇮🇹 🇷🇺'] },
+            { id: 5, type: 'unlimited', duration: '۱ ساله', requestedPlan: '1Y', baseAmount: 1000000, color: '#dc3545', colorId: 5, icon: 'shield-check', features: ['آی.پی ثابت', 'پرسرعت و پایدار', 'بدون محدودیت حجمی', '🇨🇦 🇳🇱 🇩🇪 🇫🇷 🇺🇸 🇦🇪 🇬🇧', '🇫🇮 🇯🇵 🇰🇷 🇨🇳 🇪🇸 🇮🇹 🇷🇺'] },
+            { id: 6, type: 'unlimited', duration: '۲ ساله', requestedPlan: '2Y', baseAmount: 2000000, color: '#fd7e14', colorId: 6, icon: 'gem', features: ['آی.پی ثابت', 'پرسرعت و پایدار', 'بدون محدودیت حجمی', '🇨🇦 🇳🇱 🇩🇪 🇫🇷 🇺🇸 🇦🇪 🇬🇧', '🇫🇮 🇯🇵 🇰🇷 🇨🇳 🇪🇸 🇮🇹 🇷🇺'] },
+            // National Plans (ID 7-12)
+            { id: 7, type: 'national', duration: '۱ ماهه', requestedPlan: 'N1M', baseAmount: 400000, color: '#00bcd4', colorId: 7, icon: 'cloud-lightning', features: ['تحریم شکن + فیلتر شکن', 'بروزرسانی لحظه ای و مداوم', 'قابل اتصال با تمامی اپراتورها', 'چند سروره با آی.پی ثابت امن'] },
+            { id: 8, type: 'national', duration: '۲ ماهه', requestedPlan: 'N2M', baseAmount: 700000, color: '#8bc34a', colorId: 8, icon: 'bar-chart-3', features: ['تحریم شکن + فیلتر شکن', 'بروزرسانی لحظه ای و مداوم', 'قابل اتصال با تمامی اپراتورها', 'چند سروره با آی.پی ثابت امن'] },
+            { id: 9, type: 'national', duration: '۳ ماهه', requestedPlan: 'N3M', baseAmount: 1000000, color: '#ff5722', colorId: 9, icon: 'crown', features: ['تحریم شکن + فیلتر شکن', 'بروزرسانی لحظه ای و مداوم', 'قابل اتصال با تمامی اپراتورها', 'چند سروره با آی.پی ثابت امن'] },
+            { id: 10, type: 'national', duration: '۶ ماهه', requestedPlan: 'N6M', baseAmount: 1800000, color: '#607d8b', colorId: 10, icon: 'moon', features: ['تحریم شکن + فیلتر شکن', 'بروزرسانی لحظه ای و مداوم', 'قابل اتصال با تمامی اپراتورها', 'چند سروره با آی.پی ثابت امن'] },
+            { id: 11, type: 'national', duration: '۱ ساله', requestedPlan: 'N1Y', baseAmount: 2800000, color: '#9c27b0', colorId: 11, icon: 'box', features: ['تحریم شکن + فیلتر شکن', 'بروزرسانی لحظه ای و مداوم', 'قابل اتصال با تمامی اپراتورها', 'چند سروره با آی.پی ثابت امن'] },
+            { id: 12, type: 'national', duration: '۲ ساله', requestedPlan: 'N2Y', baseAmount: 4000000, color: '#f44336', colorId: 12, icon: 'gift', features: ['تحریم شکن + فیلتر شکن', 'بروزرسانی لحظه ای و مداوم', 'قابل اتصال با تمامی اپراتورها', 'چند سروره با آی.پی ثابت امن'] },
+        ];
+        
+        const RenewPlans = {
+            unlimited: [
+                { value: 1, label: '۱ ماهه', baseAmount: 120000, requestedPlan: '1M', colorId: 1 },
+                { value: 2, label: '۲ ماهه', baseAmount: 220000, requestedPlan: '2M', colorId: 2 },
+                { value: 3, label: '۳ ماهه', baseAmount: 340000, requestedPlan: '3M', colorId: 3 },
+                { value: 4, label: '۶ ماهه', baseAmount: 600000, requestedPlan: '6M', colorId: 4 },
+                { value: 5, label: '۱ ساله', baseAmount: 1000000, requestedPlan: '1Y', colorId: 5 },
+                { value: 6, label: '۲ ساله', baseAmount: 2000000, requestedPlan: '2Y', colorId: 6 },
+            ],
+            national: [
+                { value: 1, label: '۱ ماهه', baseAmount: 400000, requestedPlan: 'N1M', colorId: 7 },
+                { value: 2, label: '۲ ماهه', baseAmount: 700000, requestedPlan: 'N2M', colorId: 8 },
+                { value: 3, label: '۳ ماهه', baseAmount: 1000000, requestedPlan: 'N3M', colorId: 9 },
+                { value: 4, label: '۶ ماهه', baseAmount: 1800000, requestedPlan: 'N6M', colorId: 10 },
+                { value: 5, label: '۱ ساله', baseAmount: 2800000, requestedPlan: 'N1Y', colorId: 11 },
+                { value: 6, label: '۲ ساله', baseAmount: 4000000, requestedPlan: 'N2Y', colorId: 12 },
+            ]
+        };
+        
+        const calculateMultiUserPrice = (basePrice, users) => {
+            if (users <= 1) return basePrice;
+            const multiplier = 1 + (users - 1) * 0.5;
+            return Math.round(basePrice * multiplier / 1000) * 1000;
+        };
+
+        const formatPrice = (price) => price.toLocaleString('fa-IR') + " تومان";
+        
+        const getPlanIcon = (iconName) => {
+            const icons = {
+                'zap': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>',
+                'rocket': '<svg data-lucide="rocket"></svg>',
+                'star': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>',
+                'flame': '<svg data-lucide="flame"></svg>',
+                'shield-check': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>',
+                'gem': '<svg data-lucide="gem"></svg>',
+                'cloud-lightning': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud-lightning"><path d="M6 16.326A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 .5 8.973"/><path d="m13 12-3 5h4l-3 5"/></svg>',
+                'bar-chart-3': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-3"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>',
+                'crown': '<svg data-lucide="crown"></svg>',
+                'moon': '<svg data-lucide="moon"></svg>',
+                'box': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>',
+                'gift': '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5"/></svg>'
+            };
+            return icons[iconName] || '';
+        };
+
+        const createPlanCard = (plan) => {
+            const featuresHtml = plan.features.map(f => `<li>${f}</li>`).join('');
+            
+            let userIconsHtml = '';
+            for(let i = 1; i <= 8; i++) {
+                const isSelected = i === 1 ? ' selected' : ''; 
+                userIconsHtml += `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user user-icon${isSelected}" data-users="${i}"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>`;
+            }
+
+            return `
+                <div class="plan-card" data-plan-id="${plan.id}" data-plan-color-id="${plan.colorId}">
+                    <input type="radio" name="plan-${plan.type}" id="plan-${plan.type}-${plan.id}" data-price="${plan.baseAmount}" data-requested-plan="${plan.requestedPlan}">
+                    <label for="plan-${plan.type}-${plan.id}" style="cursor: pointer;">
+                        <div class="plan-icon" style="height: 48px;">${getPlanIcon(plan.icon)}</div>
+                        <div class="plan-duration">${plan.duration}</div>
+                        <ul class="plan-features">${featuresHtml}</ul>
+                        
+                        <div class="os-icons">
+                            </svg><svg data-lucide="Smartphone"></svg>
+                            </svg><svg data-lucide="tablet"></svg>
+                            </svg><svg data-lucide="Monitor"></svg>
+                        </div>
+
+                        <div class="user-icon-selector" data-plan-id="${plan.id}">
+                            ${userIconsHtml}
+                        </div>
+                        <div class="user-count-display">
+                            <span>تعداد کاربر: </span>
+                            <span class="user-count-value">۱ نفر</span>
+                        </div>
+                        
+                        <div class="plan-price-section">
+                            <div class="plan-price">
+                                <span class="final-price">${formatPrice(plan.baseAmount)}</span>
+                            </div>
+                            <button class="purchase-btn" data-plan-id="${plan.id}" data-users="1" data-total-price="${plan.baseAmount}">
+                                خرید اشتراک
+                            </button>
+                        </div>
+                    </label>
+                </div>
+            `;
+        };
+
+        // --- JS for Flip Cards (Free Test) ---
+        function flipCard(btn) {
+            btn.closest('.flip-card').classList.add('flipped');
+        }
+        function flipBack(btn) {
+            btn.closest('.flip-card').classList.remove('flipped');
+        }
+        
+        // --- Add click event listeners to "Get Free" buttons ---
+        document.querySelectorAll('.flip-card .flip-card-front button.flip-btn').forEach(btn => {
+            btn.addEventListener('click', () => flipCard(btn));
+        });
+
+        async function handleTestSubmit(event, type) {
+            event.preventDefault();
+            const form = event.target;
+            const btn = form.querySelector('button[type="submit"]');
+            const phone = form.querySelector('input[name="phone"]').value;
+            const backFace = form.closest('.flip-card-back');
+            const resultContainer = backFace.querySelector('.result-container');
+            const linkCode = resultContainer.querySelector('code');
+            const countdownEl = resultContainer.querySelector('.countdown');
+
+            if(!phone) return alert('شماره موبایل الزامی است');
+
+            btn.disabled = true;
+            btn.textContent = 'در حال دریافت...';
+
+            try {
+                const response = await fetch('/api/get-free-web', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ phone: phone, type: type }) // Type is sent just in case, logic uses single sheet
+                });
+                
+                const data = await response.json();
+
+                if(response.ok && data.success) {
+                    form.style.display = 'none';
+                    resultContainer.classList.add('active');
+                    linkCode.textContent = data.link;
+                    
+                    // Countdown
+                    let seconds = 5;
+                    countdownEl.textContent = `باز شدن خودکار در ${seconds} ثانیه...`;
+                    const timer = setInterval(() => {
+                        seconds--;
+                        countdownEl.textContent = `باز شدن خودکار در ${seconds} ثانیه...`;
+                        if(seconds <= 0) {
+                            clearInterval(timer);
+                            window.open(data.link, '_blank');
+                            countdownEl.textContent = 'لینک باز شد.';
+                        }
+                    }, 1000);
+
+                } else {
+                    alert(data.error || 'خطا در دریافت اشتراک');
+                    btn.disabled = false;
+                    btn.textContent = 'دریافت لینک';
+                }
+
+            } catch (error) {
+                alert('خطای ارتباط با سرور');
+                btn.disabled = false;
+                btn.textContent = 'دریافت لینک';
+            }
+        }
+        
+        function copyLink(btn) {
+            const link = btn.parentElement.querySelector('code').textContent;
+            navigator.clipboard.writeText(link).then(() => {
+                const originalText = btn.textContent;
+                btn.textContent = 'کپی شد!';
+                setTimeout(() => btn.textContent = originalText, 2000);
+            });
+        }
+
+        // --- Typing Data per Tab ---
+        const tabTypingData = {
+            'buy-unlimited': [
+                "ترافیک همه سرورها نامحدود است و تا پایان مدت زمان اشتراک بدون هیچ محدودیتی قابل استفاده هستند. ـــ",
+                `محتوای لینک اشتراک دریافتی شما پس از خرید اشتراک به این صورت خواهد بود:<button onclick="handleButtonAction()"> ـــ</button>`,
+                "هر اشتراک دارای بیش از ۲۰ سرور از کشورهای مختلف است که برای شما اتصالی امن و پرسرعت را به ارمغان می آورد. ـــ"
+            ],
+            'buy-national': [
+                "سرورهای اختصاصی برای دور زدن محدودیت‌های اینترنت ملی و تبدیل آن به اینترنت آزاد و پرسرعت. ـــ",
+                "سازگار با تمام اپراتورها (همراه اول، ایرانسل، رایتل) حتی در زمان قطعی کامل اینترنت بین‌الملل. ـــ",
+                "اتصال پایدار و بدون قطعی، مناسب برای ترید، گیمینگ و وب‌گردی در شرایط اختلال شبکه. ـــ"
+            ],
+            'free-test': [
+                "قبل از خرید، کیفیت و سرعت سرویس‌های ما را به مدت ۲۴ ساعت کاملاً رایگان تست کنید. ـــ",
+                "بدون نیاز به پرداخت هزینه، فقط با شماره موبایل خود لینک تست دریافت کنید و متصل شوید. ـــ",
+                "تست رایگان شامل تمامی امکانات اشتراک‌های اصلی است تا با اطمینان کامل خرید کنید. ـــ"
+            ],
+            'renew': [
+                "تمدید آنی و خودکار اشتراک‌های قبلی شما بدون تغییر در لینک اتصال و تنظیمات. ـــ",
+                "امکان تغییر پلن یا تعداد کاربران در زمان تمدید برای مدیریت بهتر هزینه‌های شما. ـــ",
+                "فقط کافیست لینک یا شناسه اشتراک قبلی خود را وارد کنید تا سیستم آن را شناسایی کند. ـــ"
+            ],
+            'track': [
+                "وضعیت سفارش خود را با وارد کردن کد رهگیری یا شماره موبایل به سرعت پیگیری کنید. ـــ",
+                "اگر لینک اشتراک خود را گم کرده‌اید، از این بخش می‌توانید مجدداً آن را بازیابی کنید. ـــ",
+                "نمایش جزئیات کامل خرید شامل تاریخ، مبلغ و وضعیت تراکنش‌های قبلی شما. ـــ"
+            ]
+        };
+
+        // Global variables for typing control
+        let currentTypingTimeout = null;
+        let currentTypingTab = 'buy-unlimited'; // Default tab
+
+        // --- Typing Logic Functions (Refactored) ---
+        function handleButtonAction() {
+            window.open('https://shammay.ir/Sub-Demo', '_blank');
+        }
+
+        function restartTyping(tabId) {
+            // Stop current animation
+            if (currentTypingTimeout) {
+                clearTimeout(currentTypingTimeout);
+                currentTypingTimeout = null;
+            }
+            
+            // Set new tab context
+            currentTypingTab = tabId;
+            
+            // Reset state variables used by typeWriter
+            // We use closure/global vars here, so we need to reset them for the new loop
+            // NOTE: The original typeWriter used global 'textIndex', 'charIndex'. 
+            // We must reset them here to start fresh for the new tab.
+            window.textIndex = 0;
+            window.charIndex = 0;
+            
+            const contentElement = document.getElementById('typed-content');
+            const cursorElement = document.getElementById('cursor');
+            
+            contentElement.innerHTML = '';
+            cursorElement.classList.remove('hidden-cursor');
+            
+            // Start typing for the new tab
+            typeWriter();
+        }
+
+        // --- Existing Global Variables for Typing (Preserved & Reset in restartTyping) ---
+        const typingSpeed = 50; 
+        const delayAfterType = 3000; 
+        const fastEraseSpeed = 10; 
+        window.textIndex = 0; 
+        window.currentText = ''; 
+        window.charIndex = 0; 
+
+
+        function adjustScroll() {
+            const cursorElement = document.getElementById('cursor');
+            const wrapperElement = document.getElementById('typed-text-wrapper');
+            if(!cursorElement || !wrapperElement) return;
+
+            const cursorPosition = cursorElement.offsetLeft;
+            const wrapperWidth = wrapperElement.offsetWidth;
+            const currentScroll = wrapperElement.scrollLeft;
+
+            if (cursorPosition > currentScroll + wrapperWidth) {
+                wrapperElement.scrollLeft = cursorPosition - wrapperWidth + cursorElement.offsetWidth;
+            } else if (cursorPosition < currentScroll) {
+                 wrapperElement.scrollLeft = cursorPosition;
+            }
+        }
+        
+        function typeWriter() {
+            const texts = tabTypingData[currentTypingTab] || tabTypingData['buy-unlimited'];
+            
+            if (window.textIndex >= texts.length) {
+                window.textIndex = 0;
+            }
+
+            window.currentText = texts[window.textIndex];
+            const contentElement = document.getElementById('typed-content');
+            const cursorElement = document.getElementById('cursor');
+
+            if (window.charIndex < window.currentText.length) {
+                cursorElement.classList.remove('hidden-cursor'); 
+                
+                let nextChunk = window.currentText.charAt(window.charIndex);
+                let nextCharIndex = window.charIndex + 1;
+
+                if (window.currentText.charAt(window.charIndex) === '<') {
+                    const closingTagIndex = window.currentText.indexOf('>', window.charIndex);
+                    if (closingTagIndex !== -1) {
+                        nextChunk = window.currentText.substring(window.charIndex, closingTagIndex + 1);
+                        nextCharIndex = closingTagIndex + 1; 
+                    }
+                }
+                
+                contentElement.innerHTML += nextChunk;
+                window.charIndex = nextCharIndex;
+
+                adjustScroll();
+
+                currentTypingTimeout = setTimeout(typeWriter, typingSpeed);
+            } else {
+                cursorElement.classList.add('hidden-cursor'); 
+                currentTypingTimeout = setTimeout(eraseText, delayAfterType);
+            }
+        }
+
+        function eraseText() {
+            const contentElement = document.getElementById('typed-content');
+            const cursorElement = document.getElementById('cursor');
+
+            if (contentElement.innerHTML.length > 0) {
+                cursorElement.classList.remove('hidden-cursor'); 
+                
+                let currentHTML = contentElement.innerHTML;
+                let newHTML = currentHTML;
+                
+                const lastClosingBracket = currentHTML.lastIndexOf('>');
+                if (lastClosingBracket === currentHTML.length - 1) {
+                    const lastOpenTag = currentHTML.lastIndexOf('<');
+                    if (currentHTML.substring(lastOpenTag, lastOpenTag + 3) === '</b') {
+                         const firstOpenTag = currentHTML.lastIndexOf('<button');
+                         if (firstOpenTag !== -1) {
+                             newHTML = currentHTML.substring(0, firstOpenTag);
+                             window.charIndex -= (currentHTML.length - firstOpenTag);
+                         } else {
+                             newHTML = currentHTML.substring(0, lastOpenTag);
+                             window.charIndex -= (currentHTML.length - lastOpenTag);
+                         }
+                    } else if (lastOpenTag !== -1) {
+                        newHTML = currentHTML.substring(0, lastOpenTag);
+                        window.charIndex -= (currentHTML.length - lastOpenTag);
+                    }
+                } 
+                
+                if (newHTML === currentHTML) {
+                    newHTML = currentHTML.substring(0, currentHTML.length - 1);
+                    window.charIndex--;
+                }
+
+                contentElement.innerHTML = newHTML;
+                adjustScroll();
+
+                currentTypingTimeout = setTimeout(eraseText, fastEraseSpeed); 
+            } else {
+                cursorElement.classList.add('hidden-cursor'); 
+                window.textIndex++; 
+                window.charIndex = 0; 
+                currentTypingTimeout = setTimeout(typeWriter, 500); 
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const body = document.body;
+            const themeToggle = document.getElementById('theme-toggle');
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const buyUnlimitedContainer = document.getElementById('buy-unlimited');
+            const buyNationalContainer = document.getElementById('buy-national');
+            const modal = document.getElementById('paymentModal');
+            const closeModalBtn = modal.querySelector('.close-btn');
+            const paymentForm = document.getElementById('payment-form');
+            const renewConfigurator = document.getElementById('renewal-configurator');
+
+            // --- Theme Switcher Logic (Updated for Auto Detection) ---
+            const getPreferredTheme = () => {
+                const storedTheme = localStorage.getItem('theme');
+                if (storedTheme) {
+                    return storedTheme;
+                }
+                return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            };
+
+            const setTheme = (theme) => {
+                body.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+            };
+
+            // Set initial theme based on preference
+            body.setAttribute('data-theme', getPreferredTheme());
+
+            themeToggle.addEventListener('click', () => {
+                const currentTheme = body.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                setTheme(newTheme);
+            });
+
+            // --- Tab Switching & Dynamic Typing Trigger ---
+            const switchTab = (tabId) => {
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+                
+                // Restart typing with new tab text
+                restartTyping(tabId);
+            };
+
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => switchTab(btn.getAttribute('data-tab')));
+            });
+
+            // Initial Typing Start
+            typeWriter();
+
+
+            // --- MODAL LOGIC ---
+            const openModal = (planName, users, price, requestedPlan, renewalIdentifier = '') => {
+                const finalPrice = parseInt(price);
+                document.getElementById('modal-plan-info').innerHTML = `پلن: <strong>${planName}</strong> | تعداد کاربر: <strong>${users} نفر</strong>`;
+                
+                document.getElementById('summary-original-amount').textContent = formatPrice(finalPrice);
+                document.getElementById('summary-final-amount').textContent = formatPrice(finalPrice);
+                document.getElementById('summary-discount-row').style.display = 'none';
+
+                // Hidden fields
+                document.getElementById('modal-amount').value = finalPrice;
+                document.getElementById('modal-original-amount').value = finalPrice;
+                document.getElementById('modal-requested-plan').value = requestedPlan;
+                document.getElementById('modal-users').value = users;
+                document.getElementById('modal-renewal-id').value = renewalIdentifier;
+                
+                // Reset form
+                paymentForm.reset();
+                document.getElementById('couponFieldContainer').classList.remove('active');
+                document.getElementById('couponToggleText').textContent = 'کد تخفیف دارم';
+                document.getElementById('couponMessage').style.display = 'none';
+                document.getElementById('applyCouponBtn').disabled = false;
+                paymentForm.querySelector('button[type="submit"]').disabled = false;
+
+
+                modal.classList.add('show');
+            };
+
+            closeModalBtn.addEventListener('click', () => modal.classList.remove('show'));
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) modal.classList.remove('show');
+            });
+            
+            // Coupon Logic
+            document.getElementById('toggleCouponBtn').addEventListener('click', () => {
+                const container = document.getElementById('couponFieldContainer');
+                const isActive = container.classList.toggle('active');
+                document.getElementById('couponToggleText').textContent = isActive ? 'پنهان کردن کد تخفیف' : 'کد تخفیف دارم';
+            });
+            
+            document.getElementById('applyCouponBtn').addEventListener('click', async (e) => {
+                const couponBtn = e.target;
+                const couponCode = document.getElementById('modal-coupon-code').value.trim();
+                const originalAmount = parseInt(document.getElementById('modal-original-amount').value);
+                const couponMessage = document.getElementById('couponMessage');
+                
+                if (!couponCode) {
+                    couponMessage.textContent = 'لطفا کد تخفیف را وارد کنید.';
+                    couponMessage.className = 'coupon-message coupon-error';
+                    couponMessage.style.display = 'block';
+                    return;
+                }
+                
+                couponBtn.disabled = true;
+                couponBtn.textContent = '...';
+                couponMessage.style.display = 'none';
+
+                try {
+                    const response = await fetch('/api/check-coupon', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ coupenCode: couponCode, originalAmount: originalAmount })
+                    });
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(data.error || 'خطای ناشناخته');
+                    }
+
+                    couponMessage.textContent = data.message;
+                    couponMessage.className = 'coupon-message coupon-success';
+                    
+                    document.getElementById('summary-final-amount').textContent = formatPrice(data.finalAmount);
+                    document.getElementById('summary-discount-amount').textContent = `- ${formatPrice(data.discountAmount)}`;
+                    document.getElementById('summary-discount-row').style.display = 'flex';
+                    document.getElementById('modal-amount').value = data.finalAmount;
+
+                } catch (error) {
+                    couponMessage.textContent = error.message;
+                    couponMessage.className = 'coupon-message coupon-error';
+                     // Reset prices if coupon is invalid
+                    document.getElementById('summary-final-amount').textContent = formatPrice(originalAmount);
+                    document.getElementById('summary-discount-row').style.display = 'none';
+                    document.getElementById('modal-amount').value = originalAmount;
+                } finally {
+                    couponBtn.disabled = false;
+                    couponBtn.textContent = 'اعمال';
+                    couponMessage.style.display = 'block';
+                }
+            });
+
+
+            // --- PLAN CARD GENERATION AND LOGIC (Buy Tabs) ---
+            const renderBuyCards = (type, container) => {
+                const filteredPlans = PlansData.filter(p => p.type === type);
+                container.innerHTML = filteredPlans.map(createPlanCard).join('');
+                initializeBuyCardLogic(container);
+            };
+
+            const initializeBuyCardLogic = (container) => {
+                container.addEventListener('click', (e) => {
+                    const target = e.target;
+                    const planCard = target.closest('.plan-card');
+                    if (!planCard) return;
+
+                    const planId = planCard.dataset.planId;
+                    const selectedPlan = PlansData.find(p => p.id == planId);
+                    const radio = planCard.querySelector('input[type="radio"]');
+                    
+                    // Select the card
+                    if (!radio.checked) {
+                        document.querySelectorAll(`#${selectedPlan.type} .plan-card`).forEach(c => c.classList.remove('selected'));
+                        planCard.classList.add('selected');
+                        radio.checked = true;
+                        updateUserSelection(planCard, 1); // Reset to 1 user on plan change
+                    }
+
+                    // Handle user icon click
+                    if (target.closest('.user-icon')) {
+                        const selectedUsers = parseInt(target.closest('.user-icon').dataset.users);
+                        updateUserSelection(planCard, selectedUsers);
+                    }
+                    
+                    // Handle purchase button click
+                    if (target.closest('.purchase-btn')) {
+                        e.preventDefault();
+                        const btn = target.closest('.purchase-btn');
+                        openModal(
+                            selectedPlan.duration + ' ' + (selectedPlan.type === 'unlimited' ? 'نامحدود' : 'ملی'),
+                            btn.dataset.users,
+                            parseInt(btn.dataset.totalPrice),
+                            selectedPlan.requestedPlan,
+                            '' // renewalIdentifier is empty
+                        );
+                    }
+                });
+
+                // Set initial selection
+                const firstCard = container.querySelector('.plan-card');
+                if (firstCard) {
+                    firstCard.classList.add('selected');
+                    firstCard.querySelector('input[type="radio"]').checked = true;
+                }
+            };
+            
+            const updateUserSelection = (card, selectedUsers) => {
+                const baseAmount = parseInt(card.querySelector('input[type="radio"]').dataset.price);
+                const price = calculateMultiUserPrice(baseAmount, selectedUsers);
+                
+                card.querySelectorAll('.user-icon').forEach(icon => {
+                    icon.classList.toggle('selected', parseInt(icon.dataset.users) <= selectedUsers);
+                });
+                card.querySelector('.user-count-value').textContent = `${selectedUsers} نفر`;
+                card.querySelector('.final-price').textContent = formatPrice(price);
+                
+                const purchaseBtn = card.querySelector('.purchase-btn');
+                purchaseBtn.dataset.users = selectedUsers;
+                purchaseBtn.dataset.totalPrice = price;
+            };
+
+            renderBuyCards('unlimited', buyUnlimitedContainer);
+            renderBuyCards('national', buyNationalContainer);
+            
+            // --- RENEW CONFIGURATOR LOGIC ---
+            const renewTypeBtns = renewConfigurator.querySelectorAll('.plan-type-btn');
+            const durationSlider = document.getElementById('renewDurationSlider');
+            const userCountSlider = document.getElementById('renewUserCountSlider');
+            const renewalIdentifierInput = document.getElementById('renewalIdentifier');
+
+            const updateRenewConfig = () => {
+                const currentType = renewConfigurator.querySelector('.plan-type-btn.active').dataset.type;
+                const availablePlans = RenewPlans[currentType];
+                
+                durationSlider.max = availablePlans.length;
+                let durationIndex = Math.min(parseInt(durationSlider.value), availablePlans.length);
+                durationSlider.value = durationIndex;
+                
+                const selectedDurationPlan = availablePlans[durationIndex - 1];
+                const selectedUsers = parseInt(userCountSlider.value);
+                
+                const basePrice = selectedDurationPlan.baseAmount;
+                const finalPrice = calculateMultiUserPrice(basePrice, selectedUsers);
+                
+                renewConfigurator.setAttribute('data-plan-color-id', selectedDurationPlan.colorId);
+                const planColor = getComputedStyle(document.querySelector(`[data-plan-color-id="${selectedDurationPlan.colorId}"]`)).getPropertyValue('--plan-color');
+                const planColorRgb = getComputedStyle(document.querySelector(`[data-plan-color-id="${selectedDurationPlan.colorId}"]`)).getPropertyValue('--plan-color-rgb');
+                
+                renewConfigurator.style.setProperty('--plan-color', planColor);
+                renewConfigurator.style.setProperty('--plan-color-rgb', planColorRgb);
+                
+                document.getElementById('renewDurationLabel').textContent = selectedDurationPlan.label;
+                document.getElementById('renewUserCountLabel').textContent = `${selectedUsers} نفر`;
+                document.getElementById('renewBasePriceDisplay').textContent = formatPrice(basePrice);
+                document.getElementById('renewUsersDisplay').textContent = `${selectedUsers} نفر`;
+                document.getElementById('renewFinalPriceDisplay').textContent = formatPrice(finalPrice);
+
+                const openRenewModalBtn = document.getElementById('openRenewModalBtn');
+                openRenewModalBtn.dataset.totalPrice = finalPrice;
+                openRenewModalBtn.dataset.requestedPlan = selectedDurationPlan.requestedPlan;
+                openRenewModalBtn.dataset.users = selectedUsers;
+                
+                const durationPercent = (durationIndex - 1) / (availablePlans.length - 1) * 100;
+                durationSlider.style.setProperty('--slider-percent', `${100 - durationPercent}%`);
+                
+                const userPercent = (selectedUsers - 1) / (userCountSlider.max - 1) * 100;
+                userCountSlider.style.setProperty('--slider-percent', `${100 - userPercent}%`);
+
+                document.getElementById('renewDurationMarks').innerHTML = availablePlans.map(p => `<span>${p.label.replace(' ماهه', 'M').replace(' ساله', 'Y')}</span>`).join('');
+            };
+
+            renewTypeBtns.forEach(btn => btn.addEventListener('click', (e) => {
+                renewTypeBtns.forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                updateRenewConfig();
+            }));
+            [durationSlider, userCountSlider].forEach(slider => slider.addEventListener('input', updateRenewConfig));
+            updateRenewConfig();
+
+            document.getElementById('openRenewModalBtn').addEventListener('click', (e) => {
+                e.preventDefault();
+                const renewalId = renewalIdentifierInput.value.trim();
+                
+                if (!renewalId) {
+                    renewalIdentifierInput.focus();
+                    renewalIdentifierInput.style.borderColor = 'var(--danger-color)';
+                    alert('لطفاً شناسه‌ی تمدید یا لینک اشتراک را وارد کنید.');
+                    return;
+                }
+                renewalIdentifierInput.style.borderColor = 'var(--border-color)';
+                
+                const btn = e.target;
+                const currentType = renewConfigurator.querySelector('.plan-type-btn.active').dataset.type;
+                const planLabel = RenewPlans[currentType][parseInt(durationSlider.value) - 1].label;
+
+                openModal(
+                    `${planLabel} ${currentType === 'unlimited' ? 'نامحدود' : 'ملی'} (تمدید)`,
+                    btn.dataset.users,
+                    parseInt(btn.dataset.totalPrice),
+                    btn.dataset.requestedPlan,
+                    renewalId
+                );
+            });
+
+            // --- PAYMENT FORM SUBMISSION ---
+            paymentForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const submitButton = paymentForm.querySelector('button[type="submit"]');
+                submitButton.disabled = true;
+                submitButton.innerHTML = 'در حال انتقال به درگاه...';
+
+                const formData = {
+                    amount: document.getElementById('modal-amount').value,
+                    description: `خرید اشتراک - پلن ${document.getElementById('modal-requested-plan').value} - ${document.getElementById('modal-users').value} کاربره`,
+                    chat_id: 'none',
+                    name: document.getElementById('modal-name').value.trim(),
+                    email: document.getElementById('modal-email').value.trim(),
+                    phone: document.getElementById('modal-phone').value.trim(),
+                    renewalIdentifier: document.getElementById('modal-renewal-id').value,
+                    requestedPlan: document.getElementById('modal-requested-plan').value,
+                    coupenCode: document.getElementById('modal-coupon-code').value.trim(),
+                    telegramUsername: document.getElementById('modal-telegram-id').value.trim(),
+                    telegramId: '',
+                    users: document.getElementById('modal-users').value
+                };
+                
+                if(formData.renewalIdentifier) {
+                     formData.description = `تمدید اشتراک - پلن ${formData.requestedPlan} - ${formData.users} کاربره`;
+                }
+
+                try {
+                    const response = await fetch('/api/start-payment', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(formData)
+                    });
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        if (data.authority) {
+                            window.location.href = `https://www.zarinpal.com/pg/StartPay/${data.authority}`;
+                        } else if (data.redirect_url) {
+                            // کوپن 100 درصد: هدایت مستقیم به صفحه وریفای
+                            window.location.href = data.redirect_url;
+                        } else {
+                            throw new Error(data.error || 'پاسخ نامعتبر از سرور.');
+                        }
+                    } else {
+                        throw new Error(data.error || 'خطا در اتصال به درگاه پرداخت.');
+                    }
+                } catch (error) {
+                    alert(`خطا: ${error.message}`);
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-credit-card"><rect width="22" height="16" x="1" y="4" rx="2" /><path d="M1 10h22" /></svg> پرداخت';
+                }
+            });
+            
+            // --- TRACKING LOGIC ---
+            const trackingForm = document.getElementById('tracking-form');
+            trackingForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const identifier = document.getElementById('tracking-input').value.trim();
+                const resultsContainer = document.getElementById('tracking-results');
+                const submitBtn = trackingForm.querySelector('button[type="submit"]');
+                
+                resultsContainer.style.display = 'none';
+                resultsContainer.innerHTML = '';
+
+                if (!identifier) {
+                    alert('لطفاً یک شناسه برای پیگیری وارد کنید.');
+                    return;
+                }
+                
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = 'در حال جستجو...';
+
+                try {
+                    const response = await fetch(`/api/track?identifier=${encodeURIComponent(identifier)}`);
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        throw new Error(data.error || 'خطای سرور');
+                    }
+                    
+                    let html = '<h3>سفارشات یافت شده:</h3>';
+                    data.forEach(item => {
+                        const planDisplay = item.plan.endsWith('M') ? `${parseInt(item.plan)} ماهه` : (item.plan === 'Renew' ? 'درخواست تمدید' : item.plan);
+                        html += `<div class="result-item">
+                            <p><strong>پلن:</strong> <span>${planDisplay}</span></p>
+                            <p><strong>تاریخ:</strong> <span>${item.date || 'نامشخص'}</span></p>
+                            ${item.link ? `<p><strong>لینک اشتراک:</strong> <code>${item.link}</code></p>` : ''}
+                             <p><strong>کد رهگیری:</strong> <span>${item.trackingId}</span></p>
+                            <p><strong>وضعیت:</strong> <span style="color: var(--plan-color);">موفق</span></p>
+                        </div>`;
+                    });
+                    resultsContainer.innerHTML = html;
+
+                } catch (error) {
+                    resultsContainer.innerHTML = `<p style="color: var(--danger-color); text-align: center;">${error.message}</p>`;
+                } finally {
+                    resultsContainer.style.display = 'block';
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg> جستجو';
+                }
+            });
+            
+            lucide.createIcons();
+        });
+    </script>
+
+<script>
+  (function(d,t) {
+    var BASE_URL="https://app.gapify.ai";
+    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=BASE_URL+"/packs/js/sdk.js";
+    g.async = true;
+    s.parentNode.insertBefore(g,s);
+    g.onload=function(){
+      window.gapifySDK.run({
+        websiteToken: 'p7e3qdSe4mfMWZ3ETKrS4Vgd',
+        baseUrl: BASE_URL
+      })
+    }
+  })(document,"script");
+</script>
+
+
+    <script>
+        const header = document.getElementById('page-header');
+        const scrollThreshold = 100;
+
+        function handleScroll() {
+            if (window.scrollY > scrollThreshold) {
+                header.classList.add('collapsed');
+            } else {
+                header.classList.remove('collapsed');
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+    </script>
+    
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const subBtn = document.querySelector('.tab-btn[data-tab="sub-page"]');
+    const allTabs = document.querySelectorAll('.tab-btn');
+
+    if (!subBtn) return;
+
+    subBtn.addEventListener("click", (e) => {
+        // تب فعال فعلی را نگه می‌داریم
+        const activeTab = document.querySelector('.tab-btn.active');
+
+        e.preventDefault();
+        e.stopImmediatePropagation();
+
+        // حذف هرگونه active که ممکن است ست شده باشد
+        subBtn.classList.remove('active');
+
+        // برگرداندن active به تب قبلی
+        if (activeTab) {
+            activeTab.classList.add('active');
+        }
+
+        // باز کردن لینک
+        window.open("https://my.shammay.ir", "_blank");
+    }, true); // <-- capture = true (خیلی مهم)
+});
+</script>
+
+</body>
+
+</html>
